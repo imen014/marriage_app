@@ -1,0 +1,12 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>users scores</title>
+{% endblock title %}
+
+
+{% block content %}
+{% for caracter  in caracters %}
+{{caracter.score}}
+{% endfor %}
+{% endblock content %}

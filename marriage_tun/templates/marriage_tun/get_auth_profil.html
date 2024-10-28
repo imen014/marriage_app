@@ -1,0 +1,32 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>user profile</title>
+
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+
+{% if user.profil_photo %}
+    <img src="{{ profil_photo_url }}" alt="Profil photo" class="img-fluid  mx-auto d-block float-start"  style="width:400px;height:400px; border-radius:50%;" />
+{% else %}
+    <p>No profile photo available</p>
+{% endif %}
+
+ <div class="card float-end" style="height:300px;width:100%; position:relative;top:50px;">
+ <h1 class="card-title ">Informations</h1>
+ <div class="card-body">
+ <p class="card-text" class="text-success"> username: {{user.username}}</p>
+   <p class="text-success card-text">email: {{user.email}}</p>
+     <p class="text-success card-text"> profession: {{user.profession}}</p>
+       <p class="text-success card-text">birthdate: {{user.birthdate}}</p>
+        <p class="text-success card-text"> status: {{user.status}}</p>
+          <p class="text-success card-text"> genre: {{user.genre}}</div></div>
+</div>
+
+<a href="{% url 'create_auth_profil'    %}">create auth profil</a>
+<a href="{% url 'get_auth_caracters'    %}">Get auth caracters</a>
+
+{% endblock content  %}

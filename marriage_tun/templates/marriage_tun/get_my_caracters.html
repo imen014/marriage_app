@@ -1,0 +1,37 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+<div class="text-warning">{{message}}</div>
+
+{% for caraceter in caraceters_auth  %}
+ <p class="alert alert-success">Nervous: {{caraceter.nerveux}}</p>
+  <p class="alert alert-success">Nice: {{caraceter.nice}}</p>
+ <p class="alert alert-success">Generous: {{caraceter.generous}}</p>
+ <p class="alert alert-success">Likes outings: {{caraceter.likes_outings}}</p>
+ <p class="alert alert-success">Frugal: {{caraceter.frugal}}</p>
+ <p class="alert alert-success">Misspent: {{caraceter.misspent}}</p>
+ <p class="alert alert-success">Available: {{caraceter.available}}</p>
+ <p class="alert alert-success">Smoker: {{caraceter.smoker}}</p>
+ <p class="alert alert-success">Drinks wine: {{caraceter.drinks_wine}}</p>
+ <p class="alert alert-success">Chapel: {{caraceter.chapel}}</p>
+ <p class="alert alert-success">Smoker: {{caraceter.smoker}}</p>
+ <p class="alert alert-success">Available: {{caraceter.available}}</p>
+ <p class="alert alert-success">Regular prayer: {{caraceter.regular_prayer}}</p>
+ <p class="alert alert-success">Has car: {{caraceter.has_car}}</p>
+ <p class="alert alert-success">Has house: {{caraceter.has_house}}</p>
+ <p class="alert alert-success">Has bank account: {{caraceter.has_bank_account}}</p>
+ <p class="alert alert-success">Riche: {{caraceter.riche}}</p>
+ <p class="alert alert-success">Polygamous relationships: {{caraceter.polygamous_relationships}}</p>
+<a href="{% url 'delete_my_caracters'  %}" class="btn btn-outline-danger">Delete</a>
+<a href="{% url 'update_auth_caracters'  %}" class="btn btn-outline-success">Update</a>
+
+{% endfor %}
+</div>
+
+{% endblock content %}

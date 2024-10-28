@@ -1,0 +1,40 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block content %}
+{% if partenaire  %}
+ <p class="alert alert-warning">Nervous: {{partenaire.user.username}}</p>
+ <p class="alert alert-success">Nervous: {{partenaire.get_nervous_text}}</p>
+<p class="alert alert-success">Nice: {{partenaire.get_nice_text}}</p>
+ <p class="alert alert-success">Generous: {{partenaire.get_generous_text}}</p>
+ <p class="alert alert-success">Likes outings: {{partenaire.get_likes_outings_text}}</p>
+ <p class="alert alert-success">Frugal: {{partenaire.get_frugal_text}}</p>
+ <p class="alert alert-success">Misspent: {{partenaire.get_misspent_text}}</p>
+ <p class="alert alert-success">Available: {{partenaire.get_available_text}}</p>
+ <p class="alert alert-success">Smoker: {{partenaire.get_smoker_text}}</p>
+ <p class="alert alert-success">Drinks wine: {{partenaire.get_drinks_wine_text}}</p>
+ <p class="alert alert-success">Chapel: {{partenaire.get_chapel_text}}</p>
+ <p class="alert alert-success">Smoker: {{partenaire.get_smoker_text}}</p>
+ <p class="alert alert-success">Available: {{partenaire.get_available_text}}</p>
+ <p class="alert alert-success">Regular prayer: {{partenaire.get_regular_prayer_text}}</p>
+ <p class="alert alert-success">Has car: {{partenaire.get_has_car_text}}</p>
+ <p class="alert alert-success">Has house: {{partenaire.get_has_house_text}}</p>
+ <p class="alert alert-success">Has bank account: {{partenaire.get_has_bank_account_text}}</p>
+ <p class="alert alert-success">Riche: {{partenaire.get_riche_text}}</p>
+ <p class="alert alert-success">Polygamous relationships: {{partenaire.get_polygamous_relationships_text}}</p>
+ <a style="background-color:blue;" class="alert alert-danger text-light" href="{% url 'get_user_profil' partenaire.user.id  %}">Get user profil</a>
+ <a class="btn btn-outline-success" href="{% url 'send_a_message' partenaire.user.id  %}">Send a message</a>
+
+
+{% else %}
+ <p class="alert alert-danger">No matching partenaire</p>
+
+{% endif %}
+
+</div>
+
+{% endblock content %}

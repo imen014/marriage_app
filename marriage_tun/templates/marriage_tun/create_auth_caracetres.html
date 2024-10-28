@@ -1,0 +1,36 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+<div class="text-warning">{{message}}</div>
+
+<form action="#" method="POST">
+{% csrf_token %}
+{{form}}
+<input type="submit" value="Validate" class="btn btn-outline-danger" />
+</form>
+</div>
+<a href="{% url 'register' %}" class="btn btn-outline-primary"> register</a>
+{% if messages %}
+{% for message in  messages %}
+{% if message.success %}
+  <ul>
+      <li class="alert alert-success">{{ message }}</li>
+  </ul>
+{% else %}
+
+
+  <ul>
+      <li class="alert alert-danger">{{ message }}</li>
+  </ul>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+   
+{% endblock content %}

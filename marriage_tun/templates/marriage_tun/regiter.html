@@ -1,0 +1,34 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>register</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+<div class="text-warning">{{message}}</div>
+
+<form action="#" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+   {% for field in form %}
+        <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+            {{ field }}
+            
+            <!-- Affichage des erreurs pour chaque champ -->
+            {% if field.errors %}
+                <div class="text-danger">
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+<input type="submit" value="Validate" class="btn btn-outline-primary" />
+</form>
+<a href="{% url 'login' %}" class="btn btn-outline-danger">Login</a>
+
+</div>
+{% endblock content %}

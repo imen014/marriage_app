@@ -1,0 +1,20 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+
+<p class="text-primary">Update Caracters </p>
+<form action="#" method="POST">
+{% csrf_token %}
+
+{{caracters}}
+<input type="submit" value="Validate" class="btn btn-outline-danger" />
+
+</form>
+</div>
+{% endblock content %}

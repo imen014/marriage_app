@@ -1,0 +1,27 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+ <meta http-equiv="refresh" content="30">
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+{% for message in messages %}
+<p class="alert alert-warning"> {{message.message_title}} </p>
+<p class="alert alert-success"> sender: {{message.sender}} </p>
+<p class="alert alert-primary">receiver: {{message.receiver}} </p>
+<p class="alert alert-secondary">content: {{message.message_content}} </p>
+ <a style="background-color:blue;" class="alert alert-danger text-light" href="{% url 'send_a_message' message.receiver.id  %}">Send a message</a>
+ <a class="btn btn-outline-danger" href="{% url 'delete_a_message' message.id  %}">delete a message</a>
+
+<p class="alert"> </p>
+<p class="alert"> </p>
+
+{% endfor %}
+
+
+
+<a href="{% url 'register' %}" class="btn btn-outline-primary"> register</a>
+{% endblock content %}

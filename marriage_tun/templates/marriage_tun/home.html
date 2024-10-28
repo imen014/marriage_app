@@ -1,0 +1,39 @@
+{% extends "marriage_tun/base.html" %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+
+<p class="text-primary">welcome home</p>
+
+{% if request.user %}
+<a href="{% url 'create_wanted_profil'  %}" class="text-success">Create wanted profil</a>
+<a href="{% url 'get_wanted_caracters'  %}" class="text-success">Get wanted profil</a>
+<a href="{% url 'get_my_profil'  %}" class="text-success">Get my profil</a>
+<a href="{% url 'account_deletion'  %}" class="btn btn-outline-danger">Delete Account</a>
+<a href="{% url 'logout_user' %}" class="btn btn-outline-primary"> logout </a>
+<a href="{% url 'matching_partenaires' %}" class="btn btn-outline-primary"> Matching partenaires</a>
+<a href="{% url 'get_auth_score' %}" class="btn btn-outline-primary"> Get My Score</a>
+<a href="{% url 'create_auth_profil'  %}" class="text-success">Create my profil</a>
+<a href="{% url 'get_auth_caracters'  %}" class="text-success">Get my caracters</a>
+<a href="{% url 'searching_suitable_partenaire_by_score'  %}" class="text-success">searching suitable partenaire by score</a>
+<a class="alert alert-success" href="{% url 'get_all_users_score'  %}" class="text-success">get all users score</a>
+<a class="alert alert-success" href="{% url 'get_my_messages'  %}" class="text-success">Get my messages</a>
+
+
+{% if score %}
+score : {{score}}
+{% else %}
+{% endif %}
+
+{% else %}
+
+<a href="{% url 'login' %}" class="btn btn-outline-primary"> login</a>
+
+{% endif %}
+</div>
+{% endblock content %}

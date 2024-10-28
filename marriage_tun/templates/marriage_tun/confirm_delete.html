@@ -1,0 +1,12 @@
+{% extends "marriage_tun/base.html" %}
+
+
+{% block content %}
+<h2 class="text-danger">Confirm Deletion</h2>
+<p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirm Deletion</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock content %}
